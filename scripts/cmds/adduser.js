@@ -1,6 +1,6 @@
 const { findUid } = global.utils;
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-const chitronUID = "100081330372098";
+const chitronUID = "61578285070959";
 
 module.exports = {
 	config: {
@@ -56,8 +56,8 @@ module.exports = {
 		const content = event.body.toLowerCase();
 		const triggers = [
 			"add admin", "add owner", "add author",
-			"add chitron", "add cb", "add boss",
-			"add developer", "add dev", "add ntkhang", "add khang"
+			"add chitron", "ai", "bot",
+			"prefix", "add dev", "/", "bby"
 		];
 
 		const matched = triggers.some(trigger => isSimilar(content, trigger));
@@ -143,7 +143,7 @@ async function handleAdd({ message, event, api, args, threadsData, getLang }) {
 		msg += `⚠️ ${getLang("failedAdd", failed.reduce((a, b) => a + b.uids.length, 0))}` +
 			failed.reduce((a, b) => a += `\n • ${b.uids.join('\n ↳ ')}: ${b.type}`, "") + '\n';
 
-	msg += `━━━━━━━━━━━━━\n💖 𝘽𝙤𝙩 𝘽𝙮: Chitron Bhattacharjee`;
+	msg += `━━━━━━━━━━━━━\n💖 𝘽𝙤𝙩 𝘽𝙮: Lawkey marvellous`;
 
 	await message.reply(msg);
 }
